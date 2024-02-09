@@ -1,0 +1,53 @@
+<!DOCTYh5E html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewh5ort" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+        <div class="block block-1">
+            <h4>IF SOMEONE</h4>
+            <p>Forget</p>
+        </div>
+        <div class="block block-2">
+            <h4> CAN ! I CAN </h4>
+            <p>the Past ,</p>
+        </div>
+        <div class="block block-3">
+            <h4>IF I CAN</h4>
+            <p>But not</p>
+        </div>
+        <div class="block block-4">
+            <h4>YOU</h4>
+            <p>Forget the</p>
+        </div>
+        <div class="block block-5">
+            <h4>CAN</h4>
+            <p>Lesson</p>
+        </div>
+    </section>
+
+
+
+    <script>
+        const container = document.querySelectorAll('.block');   //gets each panel
+
+        function toggleOpen(){                      
+            this.classList.toggle('open');                  //adds open in panel class to the css file 
+        }
+
+        function toggleActive(e){       
+            if(e.propertyName.includes('flex')){
+                this.classList.toggle('open-active')        //adds open-active in css for bringing the words
+            }
+        }
+
+        container.forEach(block => block.addEventListener('click', toggleOpen))  //reads for a click
+        container.forEach(block => block.addEventListener('transitionend', toggleActive)) //reads a transition end of above event 
+
+    </script>
+</body>
+</html>
